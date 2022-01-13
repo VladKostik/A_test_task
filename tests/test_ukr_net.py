@@ -3,14 +3,14 @@ import time
 from random_string import generate_subject, generate_message
 
 
-def test_email_1(accounts, desktop):
+def test_email_1(accounts, desktop, email='asfrro_test@ukr.net'):
     # sign in to account
     accounts.sign_in()
 
     #send 15 e-mails
     for i in range(1, 16):
         desktop.new_message()
-        desktop.fill_address('asfrro_test@ukr.net')
+        desktop.fill_address(email)
         desktop.fill_subject(generate_subject(10))
         desktop.fill_message(generate_message(10))
         desktop.send_message()
@@ -49,7 +49,7 @@ def test_email_1(accounts, desktop):
 
     #send result message
     desktop.new_message()
-    desktop.fill_address('asfrro_test@ukr.net')
+    desktop.fill_address(email)
     desktop.fill_subject('Test Results')
     desktop.fill_message(result)
     desktop.send_message()
