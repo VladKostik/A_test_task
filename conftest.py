@@ -11,7 +11,7 @@ def browser():
     browser.get(url_1)
     browser.maximize_window()
     yield browser
-    # browser.quit()
+    browser.quit()
 
 
 @pytest.fixture
