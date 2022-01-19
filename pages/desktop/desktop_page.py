@@ -8,7 +8,6 @@ from pages.desktop.desktop_locators_collection import DesktopLocatorsCollection
 class DesktopPage(BasePage):
     def __init__(self, browser: WebDriver):
         super().__init__(browser)
-        self._browser = browser
         self.__locators_collection = DesktopLocatorsCollection()
 
     def new_message(self) -> None:
